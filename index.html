@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saad Taibi - Game Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .nav-links a.active {
+            color: #FFD700;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 50px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Work Page */
+        .main-center-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            width: 100%;
+        }
+        .work-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .work-header h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        .work-header p {
+            font-size: 18px;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .photo-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .grid-item {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 3 / 2;
+            max-width: 600px;
+            width: 100%;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .grid-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover .grid-overlay {
+            transform: translateY(0);
+        }
+
+        .grid-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .grid-description {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Contact Page */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-header h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+
+        .contact-intro {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .contact-item {
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .contact-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .contact-item p {
+            color: #888;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .contact-item a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #FFD700;
+            text-shadow: 0 0 6px #FFD70099;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-radius: 50%;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            background-color: #2a2a2a;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ffffff;
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .modal p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .modal h3 {
+            color: #ffffff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .modal ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .modal ul li {
+            margin-bottom: 5px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background-color: #FFD700;
+            color: #1a1a1a;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .gallery-image.zoomed {
+            cursor: zoom-out;
+            transform: scale(1.5);
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-nav:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-nav.prev {
+            left: 30px;
+        }
+
+        .gallery-nav.next {
+            right: 30px;
+        }
+
+        .gallery-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-info {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            min-width: 250px;
+            position: absolute;
+        }
+
+        .gallery-info-close {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 1;
+            padding: 0 8px;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+        .gallery-info-close:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .gallery-counter {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+
+        .gallery-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .gallery-description {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        .zoom-controls {
+            position: absolute;
+            bottom: 100px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .zoom-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transition: background-color 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .zoom-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            main {
+                padding: 10px;
+            }
+            .main-center-container {
+                min-height: 0;
+                padding-top: 40px;
+            }
+            .work-header h1,
+            .contact-header h1 {
+                font-size: 32px;
+            }
+            .work-header p {
+                font-size: 15px;
+            }
+            .photo-grid {
+                width: 100%;
+            }
+            .grid-item {
+                max-width: 95vw;
+            }
+            .grid-item img {
+                max-width: 95vw;
+                height: auto;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .shimmer-gold {
+            background: linear-gradient(90deg, #FFD700 20%, #fffbe6 40%, #FFD700 60%, #bfa100 80%);
+            background-size: 200% auto;
+            color: #FFD700;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 2.5s linear infinite;
+            position: relative;
+            display: inline-block;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+
+        .floating-football {
+            font-size: 48px;
+            text-align: center;
+            width: 100%;
+            animation: floatFootball 2.5s ease-in-out infinite;
+            margin-bottom: -30px;
+            z-index: 2;
+            position: relative;
+        }
+        @keyframes floatFootball {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 24px 4px #FFD70099, 0 0 0 2px #FFD700;
+            transition: box-shadow 0.4s;
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 48px 8px #FFD700cc, 0 0 0 4px #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">SAAD TAIBI</div>
+        <div class="nav-links">
+            <a href="#" onclick="showPage('work')" id="work-link">WORK</a>
+            <a href="#" onclick="showPage('contact')" id="contact-link">CONTACT</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Work Page -->
+        <div id="work" class="page active">
+            <div class="main-center-container">
+                <div class="work-header">
+                    <h1 class="shimmer-gold">GAMES</h1>
+                    <p>Discover my flagship football quiz game, crafted with passion and attention to detail. Dive into a unique interactive experience that blends challenging trivia with engaging design and smooth gameplay.</p>
+                </div>
+                <div class="photo-grid">
+                    <div class="grid-item gold-glow" onclick="openGallery('photos', 0)">
+                        <img src="C:\Users\Saadt\OneDrive\Desktop\Portfolio\photos\featured graphic.png" alt="Featured Graphic">
+                        <div class="grid-overlay">
+                            <div class="grid-title">Millionaire - Goalden Ball</div>
+                            <div class="grid-description">Interactive quiz game with multiple difficulty levels</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h1>CONTACT</h1>
+                    <p class="contact-intro">Let's collaborate and create something amazing together. I'm always open to discussing new opportunities and exciting projects.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:saadhat10@gmail.com">saadhat10@gmail.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+212658458343">+212 6 58 45 83 43</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" style="display:flex;justify-content:center;align-items:center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#FFD700"/></svg>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Taza, Morocco</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" style="display:flex;justify-content:center;align-items:center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.44 8.87 8 9.8.59.11.81-.26.81-.58 0-.29-.01-1.05-.02-2.06-3.26.71-3.95-1.57-3.95-1.57-.54-1.37-1.32-1.74-1.32-1.74-1.08-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.78 1.29 3.46.99.11-.77.42-1.29.76-1.59-2.6-.3-5.34-1.3-5.34-5.8 0-1.28.46-2.33 1.22-3.15-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.21a11.5 11.5 0 0 1 3-.4c1.02.01 2.05.14 3 .4 2.3-1.53 3.3-1.21 3.3-1.21.65 1.66.24 2.88.12 3.18.76.82 1.22 1.87 1.22 3.15 0 4.51-2.74 5.5-5.35 5.8.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.22.7.82.58C18.57 20.87 22 16.84 22 12c0-5.52-4.48-10-10-10z" fill="#FFD700"/></svg>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p><a href="https://github.com/saadhat" target="_blank">github.com/saadhat</a></p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <!-- Social links removed as per user request -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Image Gallery -->
+    <div id="imageGallery" class="image-gallery">
+        <div class="gallery-container">
+            <img id="galleryImage" src="" alt="" class="gallery-image" onclick="zoomImage()">
+            
+            <button class="gallery-nav prev" onclick="changeImage(-1)">‹</button>
+            <button class="gallery-nav next" onclick="changeImage(1)">›</button>
+            
+            <button class="gallery-close" onclick="closeGallery()">×</button>
+            
+            <div class="gallery-info" id="galleryInfo">
+                <button class="gallery-info-close" onclick="hideGalleryInfo()" title="Hide Info">×</button>
+                <div class="gallery-counter">
+                    <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+                </div>
+                <div class="gallery-title" id="galleryTitle">Project Title</div>
+                <div class="gallery-description" id="galleryDescription">Project description</div>
+            </div>
+            
+            <div class="zoom-controls">
+                <button class="zoom-btn" onclick="zoomImage()" title="Zoom In/Out">🔍</button>
+                <button class="zoom-btn" onclick="openModal(currentProjectId)" title="View Details">ℹ️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentProjectId = '';
+        let currentImageIndex = 0;
+        let projectImages = {};
+        let isZoomed = false;
+        let hiddenGalleryInfoIndexes = {};
+
+        // Initialize project images
+        function initializeImages() {
+            projectImages = {
+                'photos': [
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\home.jpg',
+                        title: 'Home Screen',
+                        description: 'Home Screen with Play Button'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\loading screen.jpg',
+                        title: 'Loading Screen',
+                        description: 'Loading screen with ball rolling animation on top of goalpost'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\shop.jpg',
+                        title: 'Shop Page',
+                        description: 'In-game shop with daily rewards and purchasable items'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\leaderboard.jpg',
+                        title: 'Leaderboard',
+                        description: 'High scores and player rankings display'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\ads.jpg',
+                        title: 'Ads',
+                        description: 'In-game rewarded ads for helpers/lifelines and ruby'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\training.jpg',
+                        title: 'Training',
+                        description: 'In-game training page(daily missions) with 5 missions daily to complete'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\settings.jpg',
+                        title: 'Settings',
+                        description: 'Settings overlay with language selection, sound, music, and notifications toggles etc...'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\customer service.jpg',
+                        title: 'Customer Service',
+                        description: 'Customer service overlay for players to reach out to us'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\profile stats.jpg',
+                        title: 'Profile Stats',
+                        description: 'Profile stats screen with player category stats on radar chart and stars'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\profile friends.jpg',
+                        title: 'Profile Friends',
+                        description: 'Profile friends screen with player connections and interactions'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\achievements.jpg',
+                        title: 'Achievements',
+                        description: 'Achievements tab with player milestones and rewards'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\icons.jpg',
+                        title: 'Icons',
+                        description: 'Icons page that displays the football Icons frames'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\icons overlay.jpg',
+                        title: 'Icons Overlay',
+                        description: 'Icons overlay that displays the football Icons details (Name, Role, Background Story and Stars)'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\icons overlay2.jpg',
+                        title: 'Icons Overlay locked',
+                        description: 'Icons overlay that displays the Locked football Icons State'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\icons level up animation.jpg',
+                        title: 'Icons Level Up Animation',
+                        description: 'Icons level up animation that displays the animation of leveling up football Icons with Stars Filling up'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\card overlay state1.jpg',
+                        title: 'Card Overlay Locked',
+                        description: 'Card Pack Overlay in Locked State'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\card overlay state2.jpg',
+                        title: 'Card Overlay Unlock Timer',
+                        description: 'Card Pack Overlay in Unlock Cooldown Timer Phase'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\card overlay preview.jpg',
+                        title: 'Card Overlay Preview',
+                        description: 'Card Pack Overlay Previewing Rewards'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\card overlay preview.jpg',
+                        title: 'Card Overlay Preview',
+                        description: 'Card Pack Overlay Previewing Rewards'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\card animation.jpg',
+                        title: 'Card Animation',
+                        description: 'Card Pack Animation Before Opening'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\card animation 2.jpg',
+                        title: 'Card Animation 2',
+                        description: 'Card Pack Animation after Opening and Card Sliding Up'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\card animation 3.jpg',
+                        title: 'Card Animation 3',
+                        description: 'Card Pack Animation after Opening and Card turning to show prize'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\card animation 4.jpg',
+                        title: 'Card Animation 4',
+                        description: 'Card Pack Animation Grid Phase'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\rookie page.jpg',
+                        title: 'Rookie League Page',
+                        description: 'Rookie League Page with Rookie Frame, Play Match button and Arrow to access Amateur Page'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\rookie money ladder.jpg',
+                        title: 'Rookie Money Ladder',
+                        description: 'Rookie Money Ladder showing each question reward'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\rookie ingame.jpg',
+                        title: 'Rookie In-Game',
+                        description: 'Rookie In-Game screen the Interface which the players answer Questions At'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\amateur page.jpg',
+                        title: 'Amateur League Page',
+                        description: 'Amateur League Page with Amateur Frame, Play Match button and Arrows to access Rookie and Pro Pages'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\amateur money ladder.jpg',
+                        title: 'Amateur Money Ladder',
+                        description: 'Amateur Money Ladder showing each question reward'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\amateur ingame.jpg',
+                        title: 'Amateur In-Game',
+                        description: 'Amateur In-Game screen the Interface which the players answer Amateur Questions At'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\pro page.jpg',
+                        title: 'Pro League Page',
+                        description: 'Pro League Page with Pro Frame, Play Match button and Arrows to access Amateur and Star Pages'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\pro money ladder.jpg',
+                        title: 'Pro Money Ladder',
+                        description: 'Pro Money Ladder showing each question reward'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\pro ingame.jpg',
+                        title: 'Pro In-Game',
+                        description: 'Pro In-Game screen the Interface which the players answer Pro Questions At'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\star page.jpg',
+                        title: 'Star League Page',
+                        description: 'Star League Page with Star Frame, Play Match button and Arrows to access Pro and World Class Pages'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\star money ladder.jpg',
+                        title: 'Star Money Ladder',
+                        description: 'Star Money Ladder showing each question reward'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\star ingame.jpg',
+                        title: 'Star In-Game',
+                        description: 'Star In-Game screen the Interface which the players answer Star Questions At'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\world class page.jpg',
+                        title: 'World Class League Page',
+                        description: 'World Class League Page with World Class Frame, Play Match button and Arrows to access Star and Super Star Pages'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\world class money ladder.jpg',
+                        title: 'World Class Money Ladder',
+                        description: 'World Class Money Ladder showing each question reward'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\world class ingame.jpg',
+                        title: 'World Class In-Game',
+                        description: 'World Class In-Game screen the Interface which the players answer World Class Questions At'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\super star page.jpg',
+                        title: 'Super Star League Page',
+                        description: 'Super Star League Page with Super Star Frame, Play Match button and Arrows to access World Class and Galaticos Pages'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\super star money ladder.jpg',
+                        title: 'Super Star Money Ladder',
+                        description: 'Super Star Money Ladder showing each question reward'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\super star ingame.jpg',
+                        title: 'Super Star In-Game',
+                        description: 'Super Star In-Game screen the Interface which the players answer Super Star Questions At'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\galacticos page.jpg',
+                        title: 'Galacticos League Page',
+                        description: 'Galacticos League Page with Galacticos Frame, Play Match button and Arrows to access Super Star and Goat Pages'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\galacticos money ladder.jpg',
+                        title: 'Galacticos Money Ladder',
+                        description: 'Galacticos Money Ladder showing each question reward'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\galacticos ingame.jpg',
+                        title: 'Galacticos In-Game',
+                        description: 'Galacticos In-Game screen the Interface which the players answer Galacticos Questions At'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\goat page.jpg',
+                        title: 'Goat League Page',
+                        description: 'Goat League Page with Goat Frame, Play Match button and Arrows to access Galacticos Page'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\goat money ladder.jpg',
+                        title: 'Goat Money Ladder',
+                        description: 'Goat Money Ladder showing each question reward'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\goat ingame.jpg',
+                        title: 'Goat In-Game',
+                        description: 'Goat In-Game screen the Interface which the players answer Goat Questions At'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\ask icon.jpg',
+                        title: 'Ask an Icon',
+                        description: 'Ask an Icon List lifeline'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\ask icon answer.jpg',
+                        title: 'Ask an Icon Answer',
+                        description: 'Ask an Icon Overlay Answer - Green Answer (100%)'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\fans vote.jpg',
+                        title: 'Fans Vote',
+                        description: 'Fans Vote Percentage lifeline'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\var 1.mp4',
+                        title: 'Var 1',
+                        description: 'Var lifeline - Checking Answer Phase'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\var 2.jpg',
+                        title: 'Var 2',
+                        description: 'Var lifeline - Decision Phase'
+                    },
+                    {
+                        src: 'C:\\Users\\Saadt\\OneDrive\\Desktop\\Portfolio\\photos\\gameplay.mp4',
+                        title: 'Gameplay',
+                        description: 'Gameplay Video'
+                    },
+
+
+
+
+                ]
+            };
+        }
+
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            document.getElementById(pageId + '-link').classList.add('active');
+        }
+
+        function openGallery(projectId, imageIndex = 0) {
+            currentProjectId = projectId;
+            currentImageIndex = imageIndex;
+            
+            const gallery = document.getElementById('imageGallery');
+            const images = projectImages[projectId];
+            
+            if (!images || images.length === 0) {
+                console.error('No images found for project:', projectId);
+                return;
+            }
+            
+            updateGalleryImage();
+            gallery.style.display = 'block';
+            
+            // Prevent body scrolling
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            const gallery = document.getElementById('imageGallery');
+            gallery.style.display = 'none';
+            isZoomed = false;
+            
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        function hideGalleryInfo() {
+            hiddenGalleryInfoIndexes[currentProjectId] = hiddenGalleryInfoIndexes[currentProjectId] || {};
+            hiddenGalleryInfoIndexes[currentProjectId][currentImageIndex] = true;
+            document.getElementById('galleryInfo').style.display = 'none';
+        }
+
+        function updateGalleryImage() {
+            const images = projectImages[currentProjectId];
+            const currentImage = images[currentImageIndex];
+            
+            const galleryImage = document.getElementById('galleryImage');
+            let galleryVideo = document.getElementById('galleryVideo');
+            if (!galleryVideo) {
+                galleryVideo = document.createElement('video');
+                galleryVideo.id = 'galleryVideo';
+                galleryVideo.className = 'gallery-video';
+                galleryVideo.style.display = 'none';
+                galleryVideo.controls = true;
+                galleryImage.parentNode.insertBefore(galleryVideo, galleryImage);
+            }
+            const galleryTitle = document.getElementById('galleryTitle');
+            const galleryDescription = document.getElementById('galleryDescription');
+            const currentIndexSpan = document.getElementById('currentImageIndex');
+            const totalImagesSpan = document.getElementById('totalImages');
+            const galleryInfo = document.getElementById('galleryInfo');
+            
+            // Show image or video
+            if (currentImage.src.toLowerCase().endsWith('.mp4')) {
+                galleryImage.style.display = 'none';
+                galleryVideo.style.display = 'block';
+                galleryVideo.src = currentImage.src;
+                galleryVideo.poster = '';
+            } else {
+                galleryImage.style.display = 'block';
+                galleryVideo.style.display = 'none';
+                galleryImage.src = currentImage.src;
+                galleryImage.alt = currentImage.title;
+            }
+            galleryTitle.textContent = currentImage.title;
+            galleryDescription.textContent = currentImage.description;
+            currentIndexSpan.textContent = currentImageIndex + 1;
+            totalImagesSpan.textContent = images.length;
+            
+            // Reset zoom
+            galleryImage.classList.remove('zoomed');
+            isZoomed = false;
+
+            // Show or hide info box
+            if (
+                hiddenGalleryInfoIndexes[currentProjectId] &&
+                hiddenGalleryInfoIndexes[currentProjectId][currentImageIndex]
+            ) {
+                galleryInfo.style.display = 'none';
+            } else {
+                galleryInfo.style.display = 'block';
+            }
+        }
+
+        function changeImage(direction) {
+            const images = projectImages[currentProjectId];
+            
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            
+            updateGalleryImage();
+        }
+
+        function zoomImage() {
+            const galleryImage = document.getElementById('galleryImage');
+            
+            if (isZoomed) {
+                galleryImage.classList.remove('zoomed');
+                isZoomed = false;
+            } else {
+                galleryImage.classList.add('zoomed');
+                isZoomed = true;
+            }
+        }
+
+        function openModal(projectId) {
+            closeGallery(); // Close gallery first
+            
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modal-body');
+            
+            const projectData = {
+                'photos': {
+                    title: 'Millionaire - Goalden Ball',
+                    description: 'An interactive quiz game inspired by "Who Wants to Be a Millionaire" but focused on football. Players answer increasingly difficult questions about football history, players, and statistics.',
+                    features: [
+                        'Multiple difficulty levels with progressive scoring',
+                        'Lifelines system (VAR, Fans Vote, Ask an Icon, Substitute)',
+                        'Comprehensive football trivia database',
+                        'Sound effects and background music',
+                        'Responsive design for all devices',
+                        'Leaderboard system with high scores',
+                        'Daily rewards and in-game shop',
+                        'Animated loading screens and transitions'
+                    ],
+                    technologies: ['Flutter', 'Responsive Design', 'Figma', 'Firebase', 'Local Storage (Database)'],
+                    liveLink: '#',
+                    githubLink: '#'
+                }
+            };
+            
+            const project = projectData[projectId];
+            
+            modalBody.innerHTML = `
+                <h2>${project.title}</h2>
+                <p>${project.description}</p>
+                
+                <h3>Key Features:</h3>
+                <ul>
+                    ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+                
+                <h3>Technologies Used:</h3>
+                <div class="tech-stack">
+                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    ${project.liveLink && project.liveLink !== '#' ? `<a href="${project.liveLink}" target="_blank" style="color: #FFD700; text-decoration: none; margin-right: 20px;">🚀 Live Demo</a>` : ''}
+                    ${project.githubLink && project.githubLink !== '#' ? `<a href="${project.githubLink}" target="_blank" style="color: #FFD700; text-decoration: none;">📁 View Code</a>` : ''}
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const gallery = document.getElementById('imageGallery');
+            
+            if (gallery.style.display === 'block') {
+                switch(e.key) {
+                    case 'ArrowLeft':
+                        changeImage(-1);
+                        break;
+                    case 'ArrowRight':
+                        changeImage(1);
+                        break;
+                    case 'Escape':
+                        closeGallery();
+                        break;
+                    case ' ':
+                        e.preventDefault();
+                        zoomImage();
+                        break;
+                }
+            }
+        });
+
+        // Click outside modal to close
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            const gallery = document.getElementById('imageGallery');
+            
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+            
+            if (event.target === gallery) {
+                closeGallery();
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeImages();
+            showPage('work');
+        });
+        // Add style for gallery video
+        const style = document.createElement('style');
+        style.innerHTML = `.gallery-video { max-width: 90vw; max-height: 80vh; border-radius: 10px; box-shadow: 0 10px 50px rgba(0,0,0,0.7); background: #111; margin: 0 auto; display: block; }`;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
