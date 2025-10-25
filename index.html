@@ -569,6 +569,73 @@
         .gold-glow:hover {
             box-shadow: 0 0 48px 8px #FFD700cc, 0 0 0 4px #FFD700;
         }
+
+        /* Google Play Button */
+        .google-play-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid #FFD700;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .google-play-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
+
+        .play-icon {
+            width: 40px;
+            height: 40px;
+            color: #FFD700;
+        }
+
+        .button-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .button-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaa;
+        }
+
+        .button-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .google-play-button {
+                padding: 10px 20px;
+            }
+            
+            .play-icon {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .button-subtitle {
+                font-size: 9px;
+            }
+            
+            .button-title {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -596,6 +663,17 @@
                             <div class="grid-description">Interactive quiz game with multiple difficulty levels</div>
                         </div>
                     </div>
+                    
+                    <!-- Google Play Download Button -->
+                    <a href="https://play.google.com/store/apps/details?id=goat.football.trivia" target="_blank" class="google-play-button">
+                        <svg viewBox="0 0 24 24" class="play-icon">
+                            <path fill="currentColor" d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                        </svg>
+                        <div class="button-content">
+                            <span class="button-subtitle">GET IT ON</span>
+                            <span class="button-title">Google Play</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -941,7 +1019,7 @@
                         description: 'Fans Vote Percentage lifeline'
                     },
                     {
-                        src: 'photos/var 1.jpg',
+                        src: 'photos/var 1.mp4',
                         title: 'Var 1',
                         description: 'Var lifeline - Checking Answer Phase'
                     },
@@ -951,14 +1029,15 @@
                         description: 'Var lifeline - Decision Phase'
                     },
                     {
-                        src: 'photos/Gameplay.mp4',
+                        src: 'photos/daily rewards.jpg',
+                        title: 'Daily Rewards',
+                        description: '28-day daily login reward calendar with progressive rewards'
+                    },
+                    {
+                        src: 'photos/gameplay.mp4',
                         title: 'Gameplay',
                         description: 'Gameplay Video'
-                    },
-
-
-
-
+                    }
                 ]
             };
         }
