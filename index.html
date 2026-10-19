@@ -508,6 +508,13 @@
       .sec-title{font-size:25px;letter-spacing:3px}.profile-panel{padding:24px}.dev-name{font-size:17px;letter-spacing:2px}.dev-role{font-size:9px;letter-spacing:1.5px}.modal-content{padding:45px 22px 24px}.gallery-info{min-width:0;width:calc(100% - 36px);bottom:20px}.gallery-nav{width:38px;height:44px}.gallery-nav.prev{left:8px}.gallery-nav.next{right:8px}.gallery-image,.gallery-video{max-width:92%}
     }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fi{opacity:1;transform:none}}
+
+    .game-icon-preview { background:radial-gradient(ellipse,#493014,#130d08); }
+    .game-icon-preview img { object-fit:contain;padding:14px; }
+    .game-icon-preview .pthumb-shade { display:none; }
+    .mqos-preview { display:flex;justify-content:center;align-items:center;gap:16px;padding:16px;background:#00130e; }
+    .mqos-preview img { width:auto;height:100%;max-width:30%;object-fit:contain;border-radius:5px; }
+    @media(max-width:580px){.mqos-preview{gap:8px;padding:10px}.game-icon-preview img{padding:10px}}
   </style>
 </head>
 <body>
@@ -545,7 +552,7 @@
 
       <div class="project-grid">
 
-        <!-- ── MILLIONAIRE GOALDEN BALL ── -->
+        <!-- ── FOOTBALL TRIVIA - GOALDEN BALL ── -->
         <div class="pcard gold fi" onclick="openGallery('millionaire',0)">
           <div class="ca tl"></div><div class="ca tr"></div>
           <div class="ca bl"></div><div class="ca br"></div>
@@ -555,14 +562,14 @@
             <span class="pstatus">LIVE ON GOOGLE PLAY</span>
           </div>
 
-          <div class="pthumb">
-            <img src="Millionaire Goalden Ball/featured graphic.png"
-                 alt="Millionaire Goalden Ball">
+          <div class="pthumb game-icon-preview">
+            <img src="assets/goalden-ball-icon.webp"
+                 alt="Football Trivia - Goalden Ball current app icon">
             <div class="pthumb-shade"></div>
           </div>
 
           <div class="pbody">
-            <div class="pname">MILLIONAIRE<br>GOALDEN BALL</div>
+            <div class="pname">FOOTBALL TRIVIA<br>– GOALDEN BALL</div>
             <p class="pdesc">An immersive football trivia game inspired by "Who Wants to Be a Millionaire". Eight progressive difficulty tiers — Rookie to G.O.A.T. — with a full lifeline system, Icon collection, card packs, and daily rewards.</p>
             <div class="ptags">
               <span class="ptag">FLUTTER</span>
@@ -586,14 +593,14 @@
         </div>
 
         <!-- ── MUSLIM QUEST OS ── -->
-        <div class="pcard green fi" onclick="openModal('muslimquest')">
+        <div class="pcard green fi" onclick="openGallery('muslimquest',0)">
           <div class="ca tl"></div><div class="ca tr"></div><div class="ca bl"></div><div class="ca br"></div>
           <div class="pcard-bar"><span class="pcat">WEB / PWA PROJECT</span><span class="pstatus">IN DEVELOPMENT</span></div>
-          <div class="pthumb quest-preview"><span class="quest-name">MUSLIM<br>QUEST OS</span><span class="quest-status">WORK IN PROGRESS</span></div>
+          <div class="pthumb mqos-preview"><img src="assets/mqos/01-system-briefing.webp" alt="Muslim Quest OS system briefing — in-development preview" loading="lazy"><img src="assets/mqos/02-module-launcher.webp" alt="Muslim Quest OS module launcher — in-development preview" loading="lazy"><img src="assets/mqos/03-prayer.webp" alt="Muslim Quest OS prayer — in-development preview" loading="lazy"></div>
           <div class="pbody"><div class="pname">MUSLIM QUEST OS</div>
             <p class="pdesc">A local-first Muslim practice companion bringing prayer windows, daily quests, Quran progress, dhikr and private worship records together. Still in development.</p>
             <div class="ptags"><span class="ptag">REACT</span><span class="ptag">TYPESCRIPT</span><span class="ptag">PWA</span><span class="ptag">LOCAL-FIRST</span></div>
-            <div class="pactions"><button class="btn-primary" onclick="event.stopPropagation();openModal('muslimquest')">PROJECT NOTES</button></div>
+            <div class="pactions"><button class="btn-primary" onclick="event.stopPropagation();openGallery('muslimquest',0)">VIEW SCREENSHOTS</button><button class="btn-secondary" onclick="event.stopPropagation();openModal('muslimquest')">PROJECT DETAILS</button></div>
           </div>
         </div>
 
@@ -671,7 +678,7 @@
             <div class="cico">▶</div>
             <div>
               <div class="clbl">GOOGLE PLAY</div>
-              <div class="cval cval-link">Millionaire Goalden Ball</div>
+              <div class="cval cval-link">Football Trivia - Goalden Ball</div>
             </div>
           </a>
         </div>
@@ -734,6 +741,7 @@ let projectImages={};
 function initImages(){
   projectImages={
     millionaire:[
+      {src:'assets/goalden-ball-icon.webp',title:'Football Trivia - Goalden Ball',description:'Current app icon'},
       {src:'Millionaire Goalden Ball/home.jpg',                       title:'Home Screen',                description:'Main screen with Play button'},
       {src:'Millionaire Goalden Ball/loading screen.jpg',             title:'Loading Screen',             description:'Animated ball rolling on goalpost'},
       {src:'Millionaire Goalden Ball/shop.jpg',                       title:'Shop',                       description:'In-game shop with purchasable items and daily rewards'},
@@ -788,6 +796,7 @@ function initImages(){
       {src:'Millionaire Goalden Ball/daily rewards.jpg',              title:'Daily Rewards',              description:'28-day login calendar with progressive rewards'},
       {src:'Millionaire Goalden Ball/Gameplay.mp4',                   title:'Gameplay Video',             description:'Full gameplay walkthrough'}
     ],
+    muslimquest:[{"src": "assets/mqos/01-system-briefing.webp", "title": "System briefing", "description": "Current prayer window, daily quests and Quran continuation — in development"}, {"src": "assets/mqos/02-module-launcher.webp", "title": "Module launcher", "description": "The current Muslim Quest OS module launcher — in development"}, {"src": "assets/mqos/03-prayer.webp", "title": "Prayer", "description": "Prayer module in its clean default state — in development"}, {"src": "assets/mqos/04-quran-library.webp", "title": "Quran library", "description": "Quran library and reading progress — in development"}, {"src": "assets/mqos/05-dhikr.webp", "title": "Dhikr", "description": "Contextual dhikr dashboard — in development"}, {"src": "assets/mqos/06-dua-library.webp", "title": "Dua library", "description": "Dua library in its clean default state — in development"}],
     confirmal:[{src:'assets/confirmal-preview.webp',title:'Confirmal',description:'Public demo of the order-to-settlement workflow'}],
     istighfar:[{src:'assets/istighfar-counter.webp',title:'Istighfar Counter',description:'Ivory and Gold theme — all features free, offline and ad-free'}]
   };
@@ -861,7 +870,7 @@ function openModal(pid){
   closeGallery();
   const data={
     millionaire:{
-      title:'MILLIONAIRE — GOALDEN BALL',
+      title:'FOOTBALL TRIVIA - GOALDEN BALL',
       desc:'An interactive football trivia game inspired by "Who Wants to Be a Millionaire". Players progress through eight difficulty tiers answering increasingly challenging football questions, backed by a live-ops ecosystem of daily rewards, card packs and an Icon collection.',
       features:['8 difficulty tiers: Rookie to G.O.A.T.','Four lifelines: VAR, Fans Vote, Ask an Icon, Substitute','Icon collection with level-up animations','Card pack system with animated reveal sequences','28-day daily login reward calendar','Training missions — 5 daily challenges','Leaderboard and achievement system','Multi-language support','AdMob rewarded ads integration'],
       tech:['Flutter','Dart','Firebase','Firestore','Figma','Google Mobile Ads','Google Play']
@@ -881,8 +890,8 @@ function openModal(pid){
     },
     muslimquest:{
       title:'MUSLIM QUEST OS — IN DEVELOPMENT',
-      desc:'A local-first Muslim practice companion. The web/PWA is the primary app, with an Android shell in development. The project is unfinished and is not presented as a released product.',
-      features:['Prayer windows and daily quests','Quran progress, dhikr and personal worship records','Local state and save-file backup','Web/PWA with a Capacitor Android shell','Still in development — no public download linked'],
+      desc:'A local-first Muslim practice companion. The browser/PWA is the primary product target. An Android shell exists, but native Android work is deferred. The project is unfinished and is not presented as a released product.',
+      features:['Prayer windows and daily quests','Quran progress, dhikr and personal worship records','Local state and save-file backup','Browser-first PWA; native Android work deferred','Still in development — no public download linked'],
       tech:['React','TypeScript','TanStack Start','Capacitor']
     }
   };
@@ -917,7 +926,7 @@ window.onclick=e=>{
 document.addEventListener('DOMContentLoaded',()=>{
   initImages(); showPage('work');
   document.querySelectorAll('.pcard').forEach(card=>{
-    card.tabIndex=0;card.setAttribute('role','group');card.setAttribute('aria-label',card.querySelector('.pname').textContent);
+    card.tabIndex=0;card.setAttribute('role','group');card.setAttribute('aria-label',card.querySelector('.pname').innerText.replace(/\s+/g,' '));
     card.addEventListener('keydown',event=>{if(event.target===card&&(event.key==='Enter'||event.key===' ')){event.preventDefault();card.click();}});
   });
   document.querySelector('.gallery-nav.prev').setAttribute('aria-label','Previous screenshot');
