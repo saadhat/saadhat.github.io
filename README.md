@@ -12,4 +12,4 @@ Projects:
 
 Preview locally: `python -m http.server 8875 --bind 127.0.0.1`
 
-Static HTML/CSS/JavaScript; no build or package installation needed. Google Fonts are requested by the existing design. There are no payment links, contribution requests or analytics SDKs. `app-ads.txt` is retained for the separate football game. No private app source or unpublished APK is distributed.
+Static HTML/CSS/JavaScript; no build or package installation needed. Google Fonts are requested by the existing design. The public website has an optional Support Me link to the owner-verified PayPal.Me profile. It provides no app entitlements or contributor benefits. No payment processor or analytics SDK is embedded. The app’s separate link remains labelled Visit developer portfolio; no Play approval is claimed. The public contact phone number is omitted. `app-ads.txt` is retained for the separate football game. No private app source or unpublished APK is distributed.
