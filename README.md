@@ -1,14 +1,15 @@
-# Saad Taibi — Independent developer portfolio
+# Saad Taibi — Developer portfolio
 
-Static GitHub Pages portfolio featuring Confirmal, Istighfar Counter and Millionaire – Goalden Ball.
+The existing neon portfolio design from `E:/work/Portfolio` is the source for the current site.
 
-- `index.html`: portfolio and contact details
-- `istighfar.html`: Android app overview, release status and privacy policy
-- `styles.css`: responsive styles, visible focus and reduced-motion support
-- `gallery.js` and `photos/`: existing game screenshot collection, with keyboard-accessible native dialog
-- `assets/`: compressed public product previews; the counter preview uses QA data
-- `app-ads.txt`: existing verification file for the separate football game; intentionally retained
+Projects:
+- Millionaire – Goalden Ball: existing football trivia game and Google Play link.
+- Muslim Quest OS: unfinished local-first web/PWA project; current React/TypeScript/TanStack/Capacitor description, no release or download claim.
+- Confirmal: live social-commerce operations web app.
+- Istighfar Counter: free, ad-free Android app being prepared for release.
 
-Preview: `python -m http.server 8875 --bind 127.0.0.1`
+`index.html` includes the original styling, contact page, gallery and project details. The game gallery retains 52 screenshots and a gameplay video. `assets/` contains compressed Confirmal and Istighfar previews and a cropped illustration from the Muslim Quest OS project, not a fabricated UI screenshot. Old `photos/` URLs and the separate app overview page remain available on the published site for compatibility.
 
-No external fonts, trackers, payment links, contribution requests or build dependencies. All main content and navigation work without JavaScript; only the screenshot gallery needs it. No Istighfar source code or unpublished APK is distributed here.
+Preview locally: `python -m http.server 8875 --bind 127.0.0.1`
+
+Static HTML/CSS/JavaScript; no build or package installation needed. Google Fonts are requested by the existing design. There are no payment links, contribution requests or analytics SDKs. `app-ads.txt` is retained for the separate football game. No private app source or unpublished APK is distributed.
