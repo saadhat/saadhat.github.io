@@ -1,97 +1,14 @@
-# # Saad Taibi - Game Developer Portfolio
+# Saad Taibi — Independent developer portfolio
 
-Professional portfolio website showcasing **Millionaire - Goalden Ball**, a football quiz game.
+Static GitHub Pages portfolio featuring Confirmal, Istighfar Counter and Millionaire – Goalden Ball.
 
-## 🎮 Featured Game
+- `index.html`: portfolio and contact details
+- `istighfar.html`: Android app overview, release status and privacy policy
+- `styles.css`: responsive styles, visible focus and reduced-motion support
+- `gallery.js` and `photos/`: existing game screenshot collection, with keyboard-accessible native dialog
+- `assets/`: compressed public product previews; the counter preview uses QA data
+- `app-ads.txt`: existing verification file for the separate football game; intentionally retained
 
-**Millionaire - Goalden Ball**
-- Interactive football trivia game
-- 8 difficulty leagues (Rookie to GOAT)
-- 15-question format with lifelines
-- Daily rewards & achievements
-- Icon collection system
-- Multi-language support
+Preview: `python -m http.server 8875 --bind 127.0.0.1`
 
-## 🚀 Quick Start
-
-### View Locally:
-```bash
-cd Portfolio
-python -m http.server 8000
-# Visit: http://localhost:8000
-```
-
-### Deploy to GitHub Pages:
-```bash
-git add .
-git commit -m "Deploy portfolio"
-git push origin main
-# Enable GitHub Pages in repository settings
-```
-
-## 📁 Structure
-
-```
-Portfolio/
-├── index.html          # Main website
-├── app-ads.txt         # AdMob verification
-├── photos/             # Game screenshots (60+ images)
-├── UPDATES.md          # Recent changes
-├── DEPLOYMENT_GUIDE.md # Deployment instructions
-└── README.md           # This file
-```
-
-## ✨ Features
-
-- **Responsive Design**: Works on all devices
-- **Image Gallery**: 60+ game screenshots
-- **Video Support**: Gameplay videos
-- **Zoom Functionality**: Click images to zoom
-- **Dark Theme**: Professional dark design
-- **Gold Accents**: Matches game branding
-- **Google Play Button**: Direct download link
-
-## 🔗 Links
-
-- **Google Play**: [Download Game](https://play.google.com/store/apps/details?id=goat.football.trivia)
-- **Email**: saadhat10@gmail.com
-- **GitHub**: [github.com/saadhat](https://github.com/saadhat)
-- **Location**: Taza, Morocco
-
-## 📱 Contact
-
-- **Email**: saadhat10@gmail.com
-- **Phone**: +212 6 58 45 83 43
-- **GitHub**: github.com/saadhat
-
-## 🛠️ Tech Stack
-
-- HTML5
-- CSS3 (Animations, Gradients, Flexbox)
-- Vanilla JavaScript
-- Responsive Design
-- SVG Icons
-
-## 📝 Recent Updates
-
-### January 2025:
-- ✅ Added app-ads.txt for AdMob verification
-- ✅ Added Daily Rewards screenshot
-- ✅ Added professional Google Play download button
-- ✅ Improved mobile responsiveness
-- ✅ Enhanced button styling with gold theme
-
-## 🎯 AdMob Integration
-
-This portfolio includes `app-ads.txt` for AdMob app verification:
-- Publisher ID: `pub-6166170324911232`
-- File location: `/app-ads.txt`
-- Required for ad monetization
-
-## 📄 License
-
-© 2025 Saad Taibi. All rights reserved.
-
----
-
-**Built with ❤️ by Saad Taibi**
+No external fonts, trackers, payment links, contribution requests or build dependencies. All main content and navigation work without JavaScript; only the screenshot gallery needs it. No Istighfar source code or unpublished APK is distributed here.
