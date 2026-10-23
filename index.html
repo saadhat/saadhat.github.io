@@ -528,11 +528,6 @@
     .pmeta-label { color:var(--txt3); font:11px 'Share Tech Mono',monospace; letter-spacing:1px; margin:4px 0 9px; text-transform:uppercase; }
     .ai-tools { color:var(--txt2); font-size:13px; line-height:1.5; margin:-10px 0 20px; }
     .ai-tools span { color:var(--txt); font-weight:700; }
-    .app-tip { margin-top:21px; padding:20px 20px 19px; border:1px solid var(--gold-b); border-radius:4px; background:var(--gold-d); cursor:default; }
-    .app-tip p { color:var(--txt2); font-size:13px; line-height:1.6; margin-bottom:10px; }
-    .app-tip strong { color:var(--gold); font-size:15px; }
-    .app-tip a { display:inline-flex; min-height:38px; align-items:center; padding:8px 14px; border:1px solid var(--gold-b); border-radius:3px; color:var(--gold); font:700 11px Orbitron,monospace; text-decoration:none; letter-spacing:.7px; transition:background .2s; }
-    .app-tip a:hover { background:rgba(255,215,0,.12); }
     .about-section { margin-bottom:25px; }
     .about-section h2 { color:var(--cyan); font:700 15px Orbitron,monospace; margin-bottom:12px; }
     .about-section p { color:var(--txt2); font-size:15px; line-height:1.7; }
@@ -545,8 +540,107 @@
       .build-section { padding:22px 20px; margin-bottom:45px; }
       .build-section h2 { font-size:18px; }
       .build-section p { font-size:14px; }
-      .app-tip { padding:16px; }
     }
+
+    /* 2026 visual refinement: restrained neon, clearer hierarchy, aligned cards */
+    body { background-color:#060912; }
+    .bg-layer::before {
+      background:
+        radial-gradient(ellipse 78% 37% at 50% -12%,rgba(0,114,171,.24),transparent 73%),
+        radial-gradient(ellipse 48% 40% at 100% 78%,rgba(0,103,91,.10),transparent 70%);
+    }
+    nav { border-bottom-color:rgba(123,177,206,.15); }
+    .inner { max-width:1200px; }
+    .sec-header { margin-bottom:28px; }
+    .sec-title { margin-bottom:8px; letter-spacing:3px; }
+    .sec-body { max-width:660px; font-size:16px; }
+    .projects-heading { display:flex;align-items:baseline;justify-content:space-between;gap:16px; }
+    .project-count { color:var(--txt3); font:11px 'Share Tech Mono',monospace; letter-spacing:1.7px; white-space:nowrap; }
+    .hero { max-width:1090px; padding:34px 0 10px; margin-bottom:30px; }
+    .hero-title { max-width:1050px; font-size:clamp(30px,4.35vw,52px); line-height:1.22; letter-spacing:-.9px; margin:12px 0 23px; }
+    .hero-title span { color:#63e3ff; text-shadow:0 0 36px rgba(0,212,255,.10); }
+    .hero-copy { max-width:800px; color:#acc4d7; font-size:19px; line-height:1.7; }
+    .hero-rail { display:flex; flex-wrap:wrap; gap:0; margin-top:29px; }
+    .hero-rail span { color:var(--txt3);font:10px 'Share Tech Mono',monospace;letter-spacing:1.65px; padding:0 18px; border-left:1px solid var(--cyan-b); }
+    .hero-rail span:first-child { padding-left:0; border-left:0; }
+    .build-section { display:grid;grid-template-columns:minmax(0,1.85fr) minmax(220px,1fr);gap:48px;align-items:center;padding:36px 38px;margin:0 0 66px;border-radius:10px;background:linear-gradient(120deg,rgba(13,24,43,.96),rgba(7,15,28,.96));border-color:rgba(0,212,255,.20); }
+    .process-eyebrow { color:var(--txt3);font:10px 'Share Tech Mono',monospace;letter-spacing:2.5px;margin-bottom:15px; }
+    .build-section h2 { font-size:21px; margin-bottom:18px; }
+    .build-section p { font-size:15px;line-height:1.75; }
+    .build-section p + p { margin-top:13px; }
+    .build-steps { list-style:none; border-left:1px solid rgba(0,212,255,.19); padding:0 0 0 26px; }
+    .build-steps li { display:flex;align-items:center;gap:15px;color:var(--txt);font-size:14px;line-height:1.5;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.055); }
+    .build-steps li:last-child { border-bottom:0; }
+    .build-steps li span { color:var(--cyan);font:11px 'Share Tech Mono',monospace;letter-spacing:1px;flex:0 0 21px; }
+    .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:23px;align-items:stretch; }
+    .pcard { display:flex;flex-direction:column;border-radius:10px;min-width:0;border-color:rgba(158,192,218,.12);background:rgba(9,15,29,.94);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease; }
+    .pcard::before { border-radius:10px; opacity:.11; }
+    .pcard:hover { transform:translateY(-4px); box-shadow:0 20px 45px rgba(0,0,0,.38),0 0 25px var(--sh,rgba(0,212,255,.07));border-color:rgba(149,183,209,.25); }
+    .pcard-bar { padding:14px 23px; min-height:48px; }
+    .pcat { font-size:10px;letter-spacing:1.3px; }
+    .pstatus { letter-spacing:.5px;font-size:10px; }
+    .pstatus::before { animation:none;opacity:.8; }
+    .pthumb { aspect-ratio:16/8.7; background:#0b1221; }
+    .pthumb-shade { background:linear-gradient(to top,rgba(5,8,16,.52),transparent 53%); }
+    .pbody { flex:1;display:flex;flex-direction:column;padding:25px 27px 27px; }
+    .pname { font-size:18px; letter-spacing:.5px;line-height:1.45;min-height:52px;margin-bottom:8px; }
+    .pcard.gold .pname,.pcard.green .pname { text-shadow:none; }
+    .pdesc { font-size:15px;line-height:1.65;margin-bottom:19px;min-height:98px; }
+    .pmeta-label { margin:0 0 10px;font-size:10px;letter-spacing:1.4px; }
+    .ptags { margin-bottom:16px;gap:7px; }
+    .ptag { font-size:10px;letter-spacing:.2px;padding:5px 9px;border-radius:3px;color:#b5c9da; }
+    .ai-tools { margin:0 0 22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.075);font-size:13px; }
+    .pactions { margin-top:auto;gap:9px; }
+    .btn-primary,.btn-secondary { min-height:46px;align-items:center;justify-content:center;border-radius:5px; }
+    .btn-primary { font-size:10px;letter-spacing:1.2px;background:rgba(255,255,255,.025); }
+    .btn-secondary { font-size:10px;letter-spacing:.5px; }
+    .pcard.cyan .btn-primary { background:var(--cyan-d); }
+    .pcard.gold .btn-primary { background:var(--gold-d); }
+    .pcard.green .btn-primary { background:var(--green-d); }
+    .profile-panel { border-radius:10px;margin-top:27px; }
+    .citem { border-radius:6px;min-width:0;min-height:78px; }
+    .cico { width:42px;height:42px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--cyan);background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.16); }
+    .cico svg { width:22px;height:22px; }
+    .cval { overflow-wrap:anywhere; }
+    .gallery-details { position:absolute;top:22px;left:24px;z-index:2;display:inline-flex;align-items:center;gap:9px;padding:12px 15px;min-height:44px;background:rgba(7,19,31,.93);color:var(--cyan);border:1px solid var(--cyan-b);border-radius:5px;cursor:pointer;font:10px 'Share Tech Mono',monospace;letter-spacing:1px; }
+    .gallery-details:hover { background:rgba(0,212,255,.12); }
+    .modal-content { border-radius:10px;max-width:750px; padding:40px 44px;box-shadow:0 28px 80px rgba(0,0,0,.55); }
+    .detail-support { margin-top:29px;padding:19px 20px 21px;background:rgba(255,255,255,.025);border:1px solid rgba(169,192,214,.15);border-radius:7px; }
+    #modal-body .detail-support h3 { margin:0 0 10px;color:var(--txt3);font-size:10px;letter-spacing:1.4px; }
+    #modal-body .detail-support p { color:var(--txt2);font-size:13px;line-height:1.7;margin:0 0 13px; }
+    .detail-support p strong { color:var(--txt);font-weight:700; }
+    .detail-support a { display:inline-flex;align-items:center;gap:7px;color:#c6dfea;text-decoration:none;font:12px 'Share Tech Mono',monospace;letter-spacing:.2px;border-bottom:1px solid rgba(198,223,234,.35);padding-bottom:3px; }
+    .detail-support a:hover { color:var(--cyan);border-color:var(--cyan); }
+    @media(max-width:980px){
+      .build-section { gap:25px;padding:28px;grid-template-columns:minmax(0,1.4fr) minmax(190px,1fr); }
+      .project-grid { grid-template-columns:1fr;max-width:700px;margin-inline:auto; }
+      .pdesc { min-height:0; }
+      .pname { min-height:0; }
+    }
+    @media(max-width:650px) {
+      .hero { padding:10px 0 3px;margin-bottom:24px; }
+      .hero-title { font-size:clamp(28px,7vw,36px);letter-spacing:-.35px; }
+      .hero-copy { font-size:16px;line-height:1.65; }
+      .hero-rail { gap:10px 0; margin-top:22px; }
+      .hero-rail span { font-size:9px;padding:0 10px;letter-spacing:.5px; }
+      .build-section { grid-template-columns:1fr;gap:19px;padding:23px 21px;margin-bottom:42px; }
+      .build-steps { padding:4px 0 0;border-left:0;border-top:1px solid rgba(0,212,255,.17);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px; }
+      .build-steps li { font-size:12px;gap:8px;padding:10px 0; }
+      .build-steps li span { font-size:10px;flex-basis:18px; }
+      .projects-heading { align-items:center; }
+      .project-count { font-size:9px;letter-spacing:.3px; }
+      .project-grid { gap:20px; }
+      .pcard-bar { padding:13px 17px; }
+      .pbody { padding:21px 19px 22px; }
+      .pname { font-size:17px; }
+      .pdesc { font-size:14px; }
+      .pstatus { font-size:9px; }
+      .gallery-details { top:17px;left:15px;font-size:9px;padding:9px 10px; }
+      .modal-content { padding:43px 22px 24px; }
+      .profile-panel { padding:24px; }
+      .citem { padding:12px; }
+    }
+    @media(hover:none){ .pcard:hover { transform:none; } .pcard:hover .pthumb img { transform:none; } }
   </style>
 </head>
 <body>
@@ -580,17 +674,27 @@
         <div class="sec-eyebrow">PORTFOLIO</div>
         <h1 class="hero-title">Saad Taibi — <span>AI-Native Software Developer</span></h1>
         <p class="hero-copy">I plan, build, and ship complete apps by directing AI coding agents (Claude Code, Codex, Cursor, Windsurf), then reviewing, testing, and releasing the result myself.</p>
+        <div class="hero-rail" aria-label="Focus areas"><span>PRODUCT DIRECTION</span><span>AI-ASSISTED DEVELOPMENT</span><span>QA &amp; RELEASE</span></div>
       </header>
 
       <section class="build-section fi" aria-labelledby="build-title">
-        <h2 id="build-title">How I build</h2>
-        <p>Every project here was built with AI coding agents. I own the product decisions: what to build, how the data and features are structured, and what ships. The agents write most of the code. I review it, test it, debug it, and handle releases.</p>
-        <p>The technologies listed on each project describe what it was built with, not a claim of hand-coding expertise.</p>
+        <div class="build-copy">
+          <div class="process-eyebrow">WORKFLOW / 01—04</div>
+          <h2 id="build-title">How I build</h2>
+          <p>Every project here was built with AI coding agents. I own the product decisions: what to build, how the data and features are structured, and what ships. The agents write most of the code. I review it, test it, debug it, and handle releases.</p>
+          <p>The technologies listed on each project describe what it was built with, not a claim of hand-coding expertise.</p>
+        </div>
+        <ol class="build-steps" aria-label="Development process">
+          <li><span>01</span> Define the product</li>
+          <li><span>02</span> Direct AI coding agents</li>
+          <li><span>03</span> Review, debug and test</li>
+          <li><span>04</span> Ship and maintain</li>
+        </ol>
       </section>
 
       <div class="sec-header fi">
         <div class="sec-eyebrow">SELECTED WORK</div>
-        <h2 class="sec-title">PROJECTS</h2>
+        <div class="projects-heading"><h2 class="sec-title">PROJECTS</h2><span class="project-count">04 / PROJECTS</span></div>
         <p class="sec-body">Web applications, Android tools and games — from social-commerce operations to focused daily practice and football trivia.</p>
       </div>
 
@@ -660,7 +764,7 @@
             <div class="pmeta-label">Built with</div><div class="ptags"><span class="ptag">KOTLIN</span><span class="ptag">JETPACK COMPOSE</span><span class="ptag">SQLITE</span></div>
             <p class="ai-tools"><span>AI tools:</span> Codex</p>
             <div class="pactions"><button class="btn-primary" onclick="event.stopPropagation();openGallery('istighfar',0)">VIEW PREVIEW</button><button class="btn-secondary" onclick="event.stopPropagation();openModal('istighfar')">APP DETAILS</button></div>
-            <div class="app-tip" onclick="event.stopPropagation()"><p><strong>Free and ad-free, always.</strong></p><p>If Istighfar Counter helps your daily practice and you'd like to support its development, you can leave an optional tip. It's never required, and it doesn't unlock anything.</p><a href="https://paypal.me/saadhat" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Support the app</a></div>
+
           </div>
         </div>
 
@@ -698,7 +802,7 @@
           <div>
             <div class="dev-name">SAAD TAIBI</div>
             <div class="dev-role">AI-Native Software Developer</div>
-            <div class="dev-loc">📍 Tanger, Morocco</div>
+            <div class="dev-loc">TANGIER, MOROCCO</div>
           </div>
         </div>
 
@@ -709,25 +813,25 @@
 
         <div class="contact-grid">
           <a href="mailto:saadhat10@gmail.com" class="citem">
-            <div class="cico">📧</div>
+            <div class="cico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
             <div>
               <div class="clbl">EMAIL</div>
               <div class="cval cval-link">saadhat10@gmail.com</div>
             </div>
           </a>
           <a href="assets/Saad_Taibi_CV.pdf" class="citem cv-download" download="Saad_Taibi_CV.pdf" aria-label="Download Saad Taibi CV as PDF">
-            <div class="cico" aria-hidden="true">&#8595;</div>
+            <div class="cico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M4 17v3h16v-3"/></svg></div>
             <div><div class="clbl">CV / RESUME</div><div class="cval">Download CV (PDF)</div></div>
           </a>
           <a href="https://github.com/saadhat" target="_blank" rel="noopener noreferrer" class="citem">
-            <div class="cico">🐙</div>
+            <div class="cico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.6c0-1 .15-1.45-.5-2 3.3-.4 6.5-1.6 6.5-7A5.4 5.4 0 0 0 19.5 5 5 5 0 0 0 19.4 2S17.8 2 15.5 3.8a13.2 13.2 0 0 0-7 0C6.2 2 4.6 2 4.6 2A5 5 0 0 0 4.5 5 5.4 5.4 0 0 0 3 8.4c0 5.4 3.2 6.6 6.5 7-.65.55-.5 1-.5 2V21"/><path d="M9 18.5a5 5 0 0 0 6 0"/></svg></div>
             <div>
               <div class="clbl">GITHUB</div>
               <div class="cval cval-link">github.com/saadhat</div>
             </div>
           </a>
           <a href="https://play.google.com/store/apps/developer?id=Saadhat" target="_blank" rel="noopener noreferrer" class="citem">
-            <div class="cico">▶</div>
+            <div class="cico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="m5 3 14 9-14 9V3Z"/></svg></div>
             <div>
               <div class="clbl">GOOGLE PLAY</div>
               <div class="cval cval-link">Saadhat — Developer page</div>
@@ -747,6 +851,7 @@
 <!-- ═══════════════════════════════ GALLERY ═══════════════════════════════ -->
 <div id="imageGallery" class="image-gallery">
   <div class="gallery-container">
+    <button class="gallery-details" type="button" onclick="openModal(currentProjectId)">READ PROJECT DETAILS <span aria-hidden="true">&#8599;</span></button>
     <img id="galleryImage" src="" alt="" class="gallery-image" onclick="zoomImage()">
     <button class="gallery-nav prev" onclick="changeImage(-1)">&#8249;</button>
     <button class="gallery-nav next" onclick="changeImage(1)">&#8250;</button>
@@ -765,7 +870,7 @@
 </div>
 
 <!-- ═══════════════════════════════ MODAL ═══════════════════════════════ -->
-<div id="modal" class="modal">
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Project details">
   <div class="modal-content">
     <button class="close-modal" onclick="closeModal()">&#x2715;</button>
     <div id="modal-body"></div>
@@ -958,8 +1063,14 @@ function openModal(pid){
     <ul>${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
     ${p.tech.length ? `<h3>TECH STACK</h3><div class="tech-stack">${p.tech.map(t=>`<span class="tech-tag">${t}</span>`).join('')}</div>` : ''}
     ${p.link ? `<p style="margin-top:24px"><a href="${p.link}" target="_blank" rel="noopener noreferrer" style="color:var(--cyan)">${p.linkLabel}</a></p>` : ''}
+    ${pid === 'istighfar' ? `<section class="detail-support" aria-labelledby="detail-support-title">
+      <h3 id="detail-support-title">OPTIONAL SUPPORT</h3>
+      <p><strong>Free and ad-free, always.</strong> If Istighfar Counter helps your daily practice and you'd like to support its development, you can leave an optional tip. It's never required, and it doesn't unlock anything.</p>
+      <a href="https://paypal.me/saadhat" target="_blank" rel="noopener noreferrer">Support the app <span aria-hidden="true">&#8599;</span></a>
+    </section>` : ''}
   `;
   document.getElementById('modal').style.display='block';
+  document.querySelector('.close-modal').focus();
 }
 function closeModal(){document.getElementById('modal').style.display='none';}
 
