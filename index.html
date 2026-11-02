@@ -641,6 +641,12 @@
       .citem { padding:12px; }
     }
     @media(hover:none){ .pcard:hover { transform:none; } .pcard:hover .pthumb img { transform:none; } }
+    /* Istighfar Counter is released: keep the store action accessible on all viewports. */
+    .istighfar-actions .store-link { color:var(--cyan); border-color:var(--cyan-b); background:var(--cyan-d); }
+    .istighfar-actions .store-link:hover { background:rgba(0,212,255,.15); }
+    .store-modal-link { display:inline-flex; align-items:center; gap:9px; padding:12px 16px; border:1px solid var(--cyan-b); background:var(--cyan-d); border-radius:5px; color:var(--cyan); text-decoration:none; font:700 11px Orbitron,monospace; letter-spacing:1px; }
+    .store-modal-link:hover { background:rgba(0,212,255,.16); }
+    @media(max-width:980px) and (min-width:651px) { .istighfar-actions { flex-wrap:wrap; } .istighfar-actions .btn-primary { flex:1 1 100%; } .istighfar-actions .btn-secondary { flex:1 1 calc(50% - 9px); } }
   </style>
 </head>
 <body>
@@ -757,13 +763,13 @@
         <!-- ── ISTIGHFAR COUNTER ── -->
         <div class="pcard gold fi" onclick="openGallery('istighfar',0)">
           <div class="ca tl"></div><div class="ca tr"></div><div class="ca bl"></div><div class="ca br"></div>
-          <div class="pcard-bar"><span class="pcat">ANDROID APP</span><span class="pstatus">RELEASE PREPARATION</span></div>
+          <div class="pcard-bar"><span class="pcat">ANDROID APP</span><span class="pstatus">LIVE ON GOOGLE PLAY</span></div>
           <div class="pthumb counter-preview"><img src="assets/istighfar-counter.webp" alt="Istighfar Counter in the Ivory and Gold theme" loading="lazy"><div class="pthumb-shade"></div></div>
           <div class="pbody"><div class="pname">ISTIGHFAR COUNTER</div>
             <p class="pdesc">A calm, completely free and ad-free counter for daily istighfar. Count with taps or volume keys, use black-screen Pocket Mode, track your progress offline and export your own backup.</p>
             <div class="pmeta-label">Built with</div><div class="ptags"><span class="ptag">KOTLIN</span><span class="ptag">JETPACK COMPOSE</span><span class="ptag">SQLITE</span></div>
             <p class="ai-tools"><span>AI tools:</span> Codex</p>
-            <div class="pactions"><button class="btn-primary" onclick="event.stopPropagation();openGallery('istighfar',0)">VIEW PREVIEW</button><button class="btn-secondary" onclick="event.stopPropagation();openModal('istighfar')">APP DETAILS</button></div>
+            <div class="pactions istighfar-actions"><button class="btn-primary" onclick="event.stopPropagation();openGallery('istighfar',0)">VIEW SCREENSHOTS</button><button class="btn-secondary" onclick="event.stopPropagation();openModal('istighfar')">APP DETAILS</button><a class="btn-secondary store-link" href="https://play.google.com/store/apps/details?id=com.istighfar.counter" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">PLAY STORE</a></div>
 
           </div>
         </div>
@@ -1046,6 +1052,7 @@ function openModal(pid){
       desc:'A completely free, ad-free Android app for daily istighfar. No account, premium tier or subscription is required.',
       features:['Tap or volume-key counting','Black, dimmed Pocket Mode with swipe rejection','Daily history and week/month comparisons','Local JSON backup and restore','Offline counting and on-device records','Optional advanced Shizuku screen-off counting with separate setup'],
       tech:['Kotlin','Jetpack Compose','SQLite'],
+      storeLink:'https://play.google.com/store/apps/details?id=com.istighfar.counter',
       link:'https://saadhat.github.io/istighfar-privacy/',linkLabel:'PRIVACY POLICY'
     },
     muslimquest:{
@@ -1059,6 +1066,7 @@ function openModal(pid){
   document.getElementById('modal-body').innerHTML=`
     <h2>${p.title}</h2>
     <p>${p.desc}</p>
+    ${p.storeLink ? `<p><a class="store-modal-link" href="${p.storeLink}" target="_blank" rel="noopener noreferrer">GET IT ON GOOGLE PLAY <span aria-hidden="true">&#8599;</span></a></p>` : ''}
     <h3>FEATURES</h3>
     <ul>${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
     ${p.tech.length ? `<h3>TECH STACK</h3><div class="tech-stack">${p.tech.map(t=>`<span class="tech-tag">${t}</span>`).join('')}</div>` : ''}

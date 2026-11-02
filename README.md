@@ -13,7 +13,7 @@ Static GitHub Pages site at https://saadhat.github.io. The existing neon visual 
 
 - **Goalden Ball:** Released Flutter/Firebase Android football trivia game; AI tools: Cursor, Windsurf, Claude Code.
 - **Confirmal:** Live social-commerce operations website; AI tool: Codex.
-- **Istighfar Counter:** Free, ad-free Kotlin/Jetpack Compose Android app in release preparation; AI tool: Codex.
+- **Istighfar Counter:** Released free, ad-free Kotlin/Jetpack Compose Android app on [Google Play](https://play.google.com/store/apps/details?id=com.istighfar.counter); AI tool: Codex.
 - **Muslim Quest OS:** In-development local-first React/TypeScript web/PWA; AI tool: Codex.
 
 The technologies listed describe the projects' stacks; they are not claims of hand-coding expertise.
