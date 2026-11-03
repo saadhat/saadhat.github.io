@@ -642,6 +642,39 @@
     }
     @media(hover:none){ .pcard:hover { transform:none; } .pcard:hover .pthumb img { transform:none; } }
     /* Keep Istighfar and Goalden Ball store buttons visually identical. */
+
+    /* Istighfar gallery: five consecutive themes and a direct side-by-side theme picker. */
+    .gallery-theme-strip {
+      position:absolute;bottom:135px;left:50%;z-index:3;
+      transform:translateX(-50%);
+      width:min(590px,calc(100vw - 110px));
+      display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:8px;padding:9px;background:rgba(5,8,16,.94);
+      border:1px solid rgba(0,212,255,.32);border-radius:9px;
+      box-shadow:0 18px 35px rgba(0,0,0,.3);
+    }
+    .gallery-theme-strip[hidden] { display:none; }
+    .theme-choice {
+      min-width:0;cursor:pointer;padding:6px 5px 7px;
+      background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.11);
+      border-radius:5px;color:#b7cede;font:10px 'Share Tech Mono',monospace;
+      display:flex;align-items:center;flex-direction:column;gap:5px;
+    }
+    .theme-choice:hover,.theme-choice.selected {
+      border-color:var(--cyan);background:rgba(0,212,255,.09);color:var(--cyan);
+    }
+    .theme-choice:focus-visible { outline:2px solid var(--cyan);outline-offset:3px; }
+    .theme-choice img {height:66px;width:100%;object-fit:contain;min-width:0;border-radius:3px;}
+    .theme-choice span {max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .image-gallery.themes-active .gallery-image {max-height:calc(100dvh - 270px);transform:translateY(-38px);}
+    .image-gallery.themes-active .gallery-image.zoomed {transform:translateY(-38px) scale(1.55);}
+    @media(max-width:580px){
+      .gallery-theme-strip {width:calc(100vw - 85px);gap:4px;padding:5px;bottom:132px;}
+      .theme-choice {padding:4px 2px 5px;font-size:9px;}
+      .theme-choice img {height:55px;}
+      .image-gallery.themes-active .gallery-image {max-height:calc(100dvh - 250px);transform:translateY(-38px);}
+      .image-gallery.themes-active .gallery-image.zoomed {transform:translateY(-38px) scale(1.55);}
+    }
   </style>
 </head>
 <body>
@@ -863,6 +896,7 @@
   <div class="gallery-container">
     <button class="gallery-details" type="button" onclick="openModal(currentProjectId)">READ PROJECT DETAILS <span aria-hidden="true">&#8599;</span></button>
     <img id="galleryImage" src="" alt="" class="gallery-image" onclick="zoomImage()">
+    <div id="galleryThemeStrip" class="gallery-theme-strip" role="group" aria-label="Compare Istighfar Counter appearance themes" hidden></div>
     <button class="gallery-nav prev" onclick="changeImage(-1)">&#8249;</button>
     <button class="gallery-nav next" onclick="changeImage(1)">&#8250;</button>
     <button class="gallery-close"    onclick="closeGallery()">&#x2715;</button>
@@ -968,7 +1002,21 @@ function initImages(){
     ],
     muslimquest:[{"src": "projects/muslim-quest-os/assets/screenshots/01-system-briefing.webp", "title": "System briefing", "description": "Current prayer window, daily quests and Quran continuation — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/02-module-launcher.webp", "title": "Module launcher", "description": "The current Muslim Quest OS module launcher — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/03-prayer.webp", "title": "Prayer", "description": "Prayer module in its clean default state — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/04-quran-library.webp", "title": "Quran library", "description": "Quran library and reading progress — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/05-dhikr.webp", "title": "Dhikr", "description": "Contextual dhikr dashboard — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/06-dua-library.webp", "title": "Dua library", "description": "Dua library in its clean default state — in development"}],
     confirmal:[{src:'projects/confirmal/assets/preview.webp',title:'Confirmal',description:'Public demo of the order-to-settlement workflow'}],
-    istighfar:[{src:'projects/istighfar-counter/assets/preview.webp',title:'Istighfar Counter',description:'Ivory and Gold theme — all features free, offline and ad-free'}]
+    istighfar:[
+      {src:'projects/istighfar-counter/assets/screenshots/themes/Emerald.jpg',title:'Emerald Theme',description:'Appearance theme 1 of 5',group:'Themes'},
+      {src:'projects/istighfar-counter/assets/screenshots/themes/SandStone.jpg',title:'Sandstone Theme',description:'Appearance theme 2 of 5',group:'Themes'},
+      {src:'projects/istighfar-counter/assets/screenshots/themes/Rosewood.jpg',title:'Rosewood Theme',description:'Appearance theme 3 of 5',group:'Themes'},
+      {src:'projects/istighfar-counter/assets/screenshots/themes/Midnight.jpg',title:'Midnight Theme',description:'Appearance theme 4 of 5',group:'Themes'},
+      {src:'projects/istighfar-counter/assets/screenshots/themes/Obsidian.jpg',title:'Obsidian Theme',description:'Appearance theme 5 of 5',group:'Themes'},
+      {src:'projects/istighfar-counter/assets/screenshots/app-screens/Today.jpg',title:'Today',description:'App feature and navigation',group:'App'},
+      {src:'projects/istighfar-counter/assets/screenshots/app-screens/History.jpg',title:'History',description:'App feature and navigation',group:'App'},
+      {src:'projects/istighfar-counter/assets/screenshots/app-screens/Menu.jpg',title:'App Menu',description:'App feature and navigation',group:'App'},
+      {src:'projects/istighfar-counter/assets/screenshots/app-screens/Settings.jpg',title:'Settings',description:'App feature and navigation',group:'App'},
+      {src:'projects/istighfar-counter/assets/screenshots/app-screens/Settings_2.jpg',title:'More Settings',description:'App feature and navigation',group:'App'},
+      {src:'projects/istighfar-counter/assets/screenshots/arabic/Arabic_Main.jpg',title:'Arabic — Counter',description:'Arabic-language interface',group:'Arabic'},
+      {src:'projects/istighfar-counter/assets/screenshots/arabic/Arabic_Menu.jpg',title:'Arabic — Menu',description:'Arabic-language interface',group:'Arabic'},
+      {src:'projects/istighfar-counter/assets/screenshots/arabic/Arabic_Settings.jpg',title:'Arabic — Settings',description:'Arabic-language interface',group:'Arabic'}
+    ]
   };
 }
 
@@ -1024,6 +1072,40 @@ function updateGalleryImage(){
   img.classList.remove('zoomed'); isZoomed=false;
   const info=document.getElementById('galleryInfo');
   info.style.display=(hiddenInfo[currentProjectId]&&hiddenInfo[currentProjectId][currentImageIndex])?'none':'block';
+  updateIstighfarThemeStrip();
+}
+function updateIstighfarThemeStrip(){
+  const gallery=document.getElementById('imageGallery');
+  const strip=document.getElementById('galleryThemeStrip');
+  const images=projectImages[currentProjectId]||[];
+  const current=images[currentImageIndex];
+  const showing=currentProjectId==='istighfar'&&current?.group==='Themes';
+  gallery.classList.toggle('themes-active',showing);
+  strip.hidden=!showing;
+  strip.replaceChildren();
+  if(!showing)return;
+  images.forEach((shot,index)=>{
+    if(shot.group!=='Themes')return;
+    const button=document.createElement('button');
+    button.type='button';
+    button.className='theme-choice'+(currentImageIndex===index?' selected':'');
+    button.setAttribute('aria-label','Show '+shot.title);
+    button.setAttribute('aria-pressed',String(currentImageIndex===index));
+    button.title=shot.title;
+    const thumb=document.createElement('img');
+    thumb.src=shot.src;
+    thumb.alt='';
+    thumb.loading='lazy';
+    thumb.decoding='async';
+    const label=document.createElement('span');
+    label.textContent=shot.title.replace(' Theme','');
+    button.append(thumb,label);
+    button.addEventListener('click',()=>{
+      currentImageIndex=index;
+      updateGalleryImage();
+    });
+    strip.append(button);
+  });
 }
 function changeImage(d){
   const l=projectImages[currentProjectId].length;

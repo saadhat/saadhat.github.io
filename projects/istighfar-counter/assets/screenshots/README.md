@@ -1,9 +1,13 @@
-# Istighfar Counter — screenshots
+# Istighfar Counter screenshots
 
-**Upload screenshots here** via GitHub's **Add file → Upload files** control.
+The 13 JPG images are organized into three folders. Each image is used by the portfolio screenshot gallery.
 
-Suggested names: `01-home.webp`, `02-history.webp`, `03-settings.webp` (PNG/JPG also supported). Existing files keep their current names.
+| Folder | Screenshots |
+| --- | --- |
+| [themes/](themes/) | Emerald, SandStone, Rosewood, Midnight, Obsidian |
+| [app-screens/](app-screens/) | Today, History, Menu, Settings, Settings_2 |
+| [arabic/](arabic/) | Arabic_Main, Arabic_Menu, Arabic_Settings |
 
-After uploading, add each image to `projectImages` in `initImages()` within the root `index.html` to make it appear in the website gallery.
+**To add more screenshots:** Open the correct folder → **Add file → Upload files** → Commit.
 
-Website image path format: `projects/istighfar-counter/assets/screenshots/<filename>`
+**Gallery registration:** To display new images, add entries to `projectImages.istighfar` in the repository-root `index.html`. To keep all themes adjacent, keep all theme entries together at the top of that list.
