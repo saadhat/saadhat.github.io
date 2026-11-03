@@ -22,8 +22,14 @@ The optional PayPal tip link is shown only in Istighfar Counter's project detail
 
 The public CV at `assets/Saad_Taibi_CV.pdf` is an updated one-page overview without a public phone number.
 
+## File organization
+
+All project-specific media now lives in [`projects/`](projects/), organized by project. Each project has its own `assets/` and `assets/screenshots/` upload directory, with instructions. The former duplicated Goalden Ball image folders (`photos/` and `Millionaire Goalden Ball/`) are consolidated under `projects/goalden-ball/assets/`.
+
+The public CV stays in `assets/Saad_Taibi_CV.pdf`. To display uploaded screenshots, add paths to `projectImages` inside `initImages()` in the root `index.html`.
+
 ## Technical notes
 
 - Static `index.html` with inline CSS and JavaScript, no build step.
-- Preserve gallery screenshots and gameplay video; existing `photos/`, `istighfar.html`, and `app-ads.txt` assets remain available.
+- Keep screenshots and gameplay video in their project asset directories. `istighfar.html` and `app-ads.txt` remain available.
 - Local preview: `python -m http.server 8875 --bind 127.0.0.1`

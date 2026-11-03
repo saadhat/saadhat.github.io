@@ -493,7 +493,7 @@
     .pcard.cyan .pcat { color:var(--cyan);border-color:var(--cyan-b);background:var(--cyan-d); }
     .pcard.cyan .pname,.pcard.cyan .btn-primary { color:var(--cyan);border-color:var(--cyan-b); }
     .btn-primary,.btn-secondary { min-height:44px; }
-    .quest-preview { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;background:linear-gradient(#05081055,#050810aa),url(assets/mqos-project-art.webp) center/cover;color:var(--green); }
+    .quest-preview { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;background:linear-gradient(#05081055,#050810aa),url(projects/muslim-quest-os/assets/preview.webp) center/cover;color:var(--green); }
     .quest-name { font:700 clamp(25px,4vw,36px)/1.3 Orbitron,monospace;letter-spacing:4px;text-align:center; }
     .quest-status { font:11px 'Share Tech Mono',monospace;letter-spacing:3px;color:var(--txt2); }
     .counter-preview { background:#f5f0df; }
@@ -712,7 +712,7 @@
           </div>
 
           <div class="pthumb game-icon-preview">
-            <img src="assets/goalden-ball-icon.webp"
+            <img src="projects/goalden-ball/assets/icon.webp"
                  alt="Football Trivia - Goalden Ball current app icon">
             <div class="pthumb-shade"></div>
           </div>
@@ -746,7 +746,7 @@
         <div class="pcard cyan fi" onclick="openGallery('confirmal',0)">
           <div class="ca tl"></div><div class="ca tr"></div><div class="ca bl"></div><div class="ca br"></div>
           <div class="pcard-bar"><span class="pcat">WEB APPLICATION</span><span class="pstatus">LIVE WEBSITE</span></div>
-          <div class="pthumb"><img src="assets/confirmal-preview.webp" alt="Confirmal public demo: capture, confirm, deliver and settle social-commerce orders" loading="lazy"><div class="pthumb-shade"></div></div>
+          <div class="pthumb"><img src="projects/confirmal/assets/preview.webp" alt="Confirmal public demo: capture, confirm, deliver and settle social-commerce orders" loading="lazy"><div class="pthumb-shade"></div></div>
           <div class="pbody"><div class="pname">CONFIRMAL</div>
             <p class="pdesc">An operations workspace for social-commerce sellers. Capture orders from customer conversations, coordinate delivery and track cash on delivery from collection through settlement.</p>
             <div class="pmeta-label">Built with</div><div class="ptags"><span class="ptag">REACT</span><span class="ptag">VITE</span><span class="ptag">EXPRESS</span><span class="ptag">SUPABASE</span><span class="ptag">CLOUDFLARE</span></div>
@@ -759,7 +759,7 @@
         <div class="pcard gold fi" onclick="openGallery('istighfar',0)">
           <div class="ca tl"></div><div class="ca tr"></div><div class="ca bl"></div><div class="ca br"></div>
           <div class="pcard-bar"><span class="pcat">ANDROID APP</span><span class="pstatus">LIVE ON GOOGLE PLAY</span></div>
-          <div class="pthumb counter-preview"><img src="assets/istighfar-counter.webp" alt="Istighfar Counter in the Ivory and Gold theme" loading="lazy"><div class="pthumb-shade"></div></div>
+          <div class="pthumb counter-preview"><img src="projects/istighfar-counter/assets/preview.webp" alt="Istighfar Counter in the Ivory and Gold theme" loading="lazy"><div class="pthumb-shade"></div></div>
           <div class="pbody"><div class="pname">ISTIGHFAR COUNTER</div>
             <p class="pdesc">A calm, completely free and ad-free counter for daily istighfar. Count with taps or volume keys, use black-screen Pocket Mode, track your progress offline and export your own backup.</p>
             <div class="pmeta-label">Built with</div><div class="ptags"><span class="ptag">KOTLIN</span><span class="ptag">JETPACK COMPOSE</span><span class="ptag">SQLITE</span></div>
@@ -782,7 +782,7 @@
         <div class="pcard green fi" onclick="openGallery('muslimquest',0)">
           <div class="ca tl"></div><div class="ca tr"></div><div class="ca bl"></div><div class="ca br"></div>
           <div class="pcard-bar"><span class="pcat">WEB / PWA PROJECT</span><span class="pstatus">IN DEVELOPMENT</span></div>
-          <div class="pthumb mqos-preview"><img src="assets/mqos/01-system-briefing.webp" alt="Muslim Quest OS system briefing — in-development preview" loading="lazy"><img src="assets/mqos/02-module-launcher.webp" alt="Muslim Quest OS module launcher — in-development preview" loading="lazy"><img src="assets/mqos/03-prayer.webp" alt="Muslim Quest OS prayer — in-development preview" loading="lazy"></div>
+          <div class="pthumb mqos-preview"><img src="projects/muslim-quest-os/assets/screenshots/01-system-briefing.webp" alt="Muslim Quest OS system briefing — in-development preview" loading="lazy"><img src="projects/muslim-quest-os/assets/screenshots/02-module-launcher.webp" alt="Muslim Quest OS module launcher — in-development preview" loading="lazy"><img src="projects/muslim-quest-os/assets/screenshots/03-prayer.webp" alt="Muslim Quest OS prayer — in-development preview" loading="lazy"></div>
           <div class="pbody"><div class="pname">MUSLIM QUEST OS</div>
             <p class="pdesc">A local-first Muslim practice companion bringing prayer windows, daily quests, Quran progress, dhikr and private worship records together. Still in development.</p>
             <div class="pmeta-label">Built with</div><div class="ptags"><span class="ptag">REACT</span><span class="ptag">TYPESCRIPT</span><span class="ptag">TANSTACK START</span><span class="ptag">CAPACITOR</span></div>
@@ -911,64 +911,64 @@ let projectImages={};
 function initImages(){
   projectImages={
     millionaire:[
-      {src:'assets/goalden-ball-icon.webp',title:'Football Trivia - Goalden Ball',description:'Current app icon'},
-      {src:'Millionaire Goalden Ball/home.jpg',                       title:'Home Screen',                description:'Main screen with Play button'},
-      {src:'Millionaire Goalden Ball/loading screen.jpg',             title:'Loading Screen',             description:'Animated ball rolling on goalpost'},
-      {src:'Millionaire Goalden Ball/shop.jpg',                       title:'Shop',                       description:'In-game shop with purchasable items and daily rewards'},
-      {src:'Millionaire Goalden Ball/leaderboard.jpg',                title:'Leaderboard',                description:'High scores and player rankings'},
-      {src:'Millionaire Goalden Ball/ads.jpg',                        title:'Rewarded Ads',               description:'Rewarded ads for lifelines and ruby currency'},
-      {src:'Millionaire Goalden Ball/training.jpg',                   title:'Training',                   description:'Daily training missions — 5 per day'},
-      {src:'Millionaire Goalden Ball/settings.jpg',                   title:'Settings',                   description:'Language, sound, music and notification controls'},
-      {src:'Millionaire Goalden Ball/customer service.jpg',           title:'Customer Service',           description:'Player support overlay'},
-      {src:'Millionaire Goalden Ball/profile stats.jpg',              title:'Profile — Stats',            description:'Radar chart with category statistics'},
-      {src:'Millionaire Goalden Ball/profile friends.jpg',            title:'Profile — Friends',          description:'Friends list and player interactions'},
-      {src:'Millionaire Goalden Ball/achievements.jpg',               title:'Achievements',               description:'Milestones and rewards system'},
-      {src:'Millionaire Goalden Ball/icons.jpg',                      title:'Icons',                      description:'Football Icon collection frames'},
-      {src:'Millionaire Goalden Ball/icons overlay.jpg',              title:'Icon Detail',                description:'Name, role, background story and star rating'},
-      {src:'Millionaire Goalden Ball/icons overlay2.jpg',             title:'Icon — Locked State',        description:'Locked Icon display'},
-      {src:'Millionaire Goalden Ball/icons level up animation.jpg',   title:'Icon Level Up',              description:'Stars filling animation on level-up'},
-      {src:'Millionaire Goalden Ball/card overlay state1.jpg',        title:'Card Pack — Locked',         description:'Card Pack in locked state'},
-      {src:'Millionaire Goalden Ball/card overlay state2.jpg',        title:'Card Pack — Timer',          description:'Unlock cooldown timer phase'},
-      {src:'Millionaire Goalden Ball/card overlay preview.jpg',       title:'Card Pack — Preview',        description:'Previewing pack rewards'},
-      {src:'Millionaire Goalden Ball/card animation.jpg',             title:'Card Animation',             description:'Card Pack animation before opening'},
-      {src:'Millionaire Goalden Ball/card animation 2.jpg',           title:'Card Animation 2',           description:'Card sliding up after opening'},
-      {src:'Millionaire Goalden Ball/card animation 3.jpg',           title:'Card Animation 3',           description:'Card turning to reveal prize'},
-      {src:'Millionaire Goalden Ball/card animation 4.jpg',           title:'Card Animation 4',           description:'Grid phase'},
-      {src:'Millionaire Goalden Ball/rookie page.jpg',                title:'Rookie Tier',                description:'Tier overview with Play button'},
-      {src:'Millionaire Goalden Ball/rookie money ladder.jpg',        title:'Rookie — Reward Ladder',     description:'Reward per question'},
-      {src:'Millionaire Goalden Ball/rookie ingame.jpg',              title:'Rookie — In Game',           description:'Quiz interface'},
-      {src:'Millionaire Goalden Ball/amateur page.jpg',               title:'Amateur Tier',               description:'Amateur tier overview'},
-      {src:'Millionaire Goalden Ball/amateur money ladder.jpg',       title:'Amateur — Reward Ladder',    description:'Amateur reward structure'},
-      {src:'Millionaire Goalden Ball/amateur ingame.jpg',             title:'Amateur — In Game',          description:'Amateur quiz interface'},
-      {src:'Millionaire Goalden Ball/pro page.jpg',                   title:'Pro Tier',                   description:'Pro tier overview'},
-      {src:'Millionaire Goalden Ball/pro money ladder.jpg',           title:'Pro — Reward Ladder',        description:'Pro reward structure'},
-      {src:'Millionaire Goalden Ball/pro ingame.jpg',                 title:'Pro — In Game',              description:'Pro quiz interface'},
-      {src:'Millionaire Goalden Ball/star page.jpg',                  title:'Star Tier',                  description:'Star tier overview'},
-      {src:'Millionaire Goalden Ball/star money ladder.jpg',          title:'Star — Reward Ladder',       description:'Star reward structure'},
-      {src:'Millionaire Goalden Ball/star ingame.jpg',                title:'Star — In Game',             description:'Star quiz interface'},
-      {src:'Millionaire Goalden Ball/world class page.jpg',           title:'World Class Tier',           description:'World Class overview'},
-      {src:'Millionaire Goalden Ball/world class money ladder.jpg',   title:'World Class — Ladder',       description:'World Class rewards'},
-      {src:'Millionaire Goalden Ball/world class ingame.jpg',         title:'World Class — In Game',      description:'World Class interface'},
-      {src:'Millionaire Goalden Ball/super star page.jpg',            title:'Super Star Tier',            description:'Super Star overview'},
-      {src:'Millionaire Goalden Ball/super star money ladder.jpg',    title:'Super Star — Ladder',        description:'Super Star rewards'},
-      {src:'Millionaire Goalden Ball/super star ingame.jpg',          title:'Super Star — In Game',       description:'Super Star interface'},
-      {src:'Millionaire Goalden Ball/galacticos page.jpg',            title:'Galácticos Tier',            description:'Galácticos overview'},
-      {src:'Millionaire Goalden Ball/galacticos money ladder.jpg',    title:'Galácticos — Ladder',        description:'Galácticos rewards'},
-      {src:'Millionaire Goalden Ball/galacticos ingame.jpg',          title:'Galácticos — In Game',       description:'Galácticos interface'},
-      {src:'Millionaire Goalden Ball/goat page.jpg',                  title:'G.O.A.T. Tier',              description:'G.O.A.T. tier overview'},
-      {src:'Millionaire Goalden Ball/goat money ladder.jpg',          title:'G.O.A.T. — Ladder',          description:'G.O.A.T. rewards'},
-      {src:'Millionaire Goalden Ball/goat ingame.jpg',                title:'G.O.A.T. — In Game',         description:'G.O.A.T. quiz interface'},
-      {src:'Millionaire Goalden Ball/ask icon.jpg',                   title:'Ask an Icon',                description:'Ask an Icon lifeline list'},
-      {src:'Millionaire Goalden Ball/ask icon answer.jpg',            title:'Ask an Icon — Answer',       description:'Icon answer overlay (100% confidence)'},
-      {src:'Millionaire Goalden Ball/fans vote.jpg',                  title:'Fans Vote',                  description:'Percentage-based audience poll lifeline'},
-      {src:'Millionaire Goalden Ball/var 1.jpg',                      title:'VAR Lifeline',               description:'VAR review — checking answer phase'},
-      {src:'Millionaire Goalden Ball/var 2.jpg',                      title:'VAR Decision',               description:'VAR final decision overlay'},
-      {src:'Millionaire Goalden Ball/daily rewards.jpg',              title:'Daily Rewards',              description:'28-day login calendar with progressive rewards'},
-      {src:'Millionaire Goalden Ball/Gameplay.mp4',                   title:'Gameplay Video',             description:'Full gameplay walkthrough'}
+      {src:'projects/goalden-ball/assets/icon.webp',title:'Football Trivia - Goalden Ball',description:'Current app icon'},
+      {src:'projects/goalden-ball/assets/screenshots/home.jpg',                       title:'Home Screen',                description:'Main screen with Play button'},
+      {src:'projects/goalden-ball/assets/screenshots/loading screen.jpg',             title:'Loading Screen',             description:'Animated ball rolling on goalpost'},
+      {src:'projects/goalden-ball/assets/screenshots/shop.jpg',                       title:'Shop',                       description:'In-game shop with purchasable items and daily rewards'},
+      {src:'projects/goalden-ball/assets/screenshots/leaderboard.jpg',                title:'Leaderboard',                description:'High scores and player rankings'},
+      {src:'projects/goalden-ball/assets/screenshots/ads.jpg',                        title:'Rewarded Ads',               description:'Rewarded ads for lifelines and ruby currency'},
+      {src:'projects/goalden-ball/assets/screenshots/training.jpg',                   title:'Training',                   description:'Daily training missions — 5 per day'},
+      {src:'projects/goalden-ball/assets/screenshots/settings.jpg',                   title:'Settings',                   description:'Language, sound, music and notification controls'},
+      {src:'projects/goalden-ball/assets/screenshots/customer service.jpg',           title:'Customer Service',           description:'Player support overlay'},
+      {src:'projects/goalden-ball/assets/screenshots/profile stats.jpg',              title:'Profile — Stats',            description:'Radar chart with category statistics'},
+      {src:'projects/goalden-ball/assets/screenshots/profile friends.jpg',            title:'Profile — Friends',          description:'Friends list and player interactions'},
+      {src:'projects/goalden-ball/assets/screenshots/achievements.jpg',               title:'Achievements',               description:'Milestones and rewards system'},
+      {src:'projects/goalden-ball/assets/screenshots/icons.jpg',                      title:'Icons',                      description:'Football Icon collection frames'},
+      {src:'projects/goalden-ball/assets/screenshots/icons overlay.jpg',              title:'Icon Detail',                description:'Name, role, background story and star rating'},
+      {src:'projects/goalden-ball/assets/screenshots/icons overlay2.jpg',             title:'Icon — Locked State',        description:'Locked Icon display'},
+      {src:'projects/goalden-ball/assets/screenshots/icons level up animation.jpg',   title:'Icon Level Up',              description:'Stars filling animation on level-up'},
+      {src:'projects/goalden-ball/assets/screenshots/card overlay state1.jpg',        title:'Card Pack — Locked',         description:'Card Pack in locked state'},
+      {src:'projects/goalden-ball/assets/screenshots/card overlay state2.jpg',        title:'Card Pack — Timer',          description:'Unlock cooldown timer phase'},
+      {src:'projects/goalden-ball/assets/screenshots/card overlay preview.jpg',       title:'Card Pack — Preview',        description:'Previewing pack rewards'},
+      {src:'projects/goalden-ball/assets/screenshots/card animation.jpg',             title:'Card Animation',             description:'Card Pack animation before opening'},
+      {src:'projects/goalden-ball/assets/screenshots/card animation 2.jpg',           title:'Card Animation 2',           description:'Card sliding up after opening'},
+      {src:'projects/goalden-ball/assets/screenshots/card animation 3.jpg',           title:'Card Animation 3',           description:'Card turning to reveal prize'},
+      {src:'projects/goalden-ball/assets/screenshots/card animation 4.jpg',           title:'Card Animation 4',           description:'Grid phase'},
+      {src:'projects/goalden-ball/assets/screenshots/rookie page.jpg',                title:'Rookie Tier',                description:'Tier overview with Play button'},
+      {src:'projects/goalden-ball/assets/screenshots/rookie money ladder.jpg',        title:'Rookie — Reward Ladder',     description:'Reward per question'},
+      {src:'projects/goalden-ball/assets/screenshots/rookie ingame.jpg',              title:'Rookie — In Game',           description:'Quiz interface'},
+      {src:'projects/goalden-ball/assets/screenshots/amateur page.jpg',               title:'Amateur Tier',               description:'Amateur tier overview'},
+      {src:'projects/goalden-ball/assets/screenshots/amateur money ladder.jpg',       title:'Amateur — Reward Ladder',    description:'Amateur reward structure'},
+      {src:'projects/goalden-ball/assets/screenshots/amateur ingame.jpg',             title:'Amateur — In Game',          description:'Amateur quiz interface'},
+      {src:'projects/goalden-ball/assets/screenshots/pro page.jpg',                   title:'Pro Tier',                   description:'Pro tier overview'},
+      {src:'projects/goalden-ball/assets/screenshots/pro money ladder.jpg',           title:'Pro — Reward Ladder',        description:'Pro reward structure'},
+      {src:'projects/goalden-ball/assets/screenshots/pro ingame.jpg',                 title:'Pro — In Game',              description:'Pro quiz interface'},
+      {src:'projects/goalden-ball/assets/screenshots/star page.jpg',                  title:'Star Tier',                  description:'Star tier overview'},
+      {src:'projects/goalden-ball/assets/screenshots/star money ladder.jpg',          title:'Star — Reward Ladder',       description:'Star reward structure'},
+      {src:'projects/goalden-ball/assets/screenshots/star ingame.jpg',                title:'Star — In Game',             description:'Star quiz interface'},
+      {src:'projects/goalden-ball/assets/screenshots/world class page.jpg',           title:'World Class Tier',           description:'World Class overview'},
+      {src:'projects/goalden-ball/assets/screenshots/world class money ladder.jpg',   title:'World Class — Ladder',       description:'World Class rewards'},
+      {src:'projects/goalden-ball/assets/screenshots/world class ingame.jpg',         title:'World Class — In Game',      description:'World Class interface'},
+      {src:'projects/goalden-ball/assets/screenshots/super star page.jpg',            title:'Super Star Tier',            description:'Super Star overview'},
+      {src:'projects/goalden-ball/assets/screenshots/super star money ladder.jpg',    title:'Super Star — Ladder',        description:'Super Star rewards'},
+      {src:'projects/goalden-ball/assets/screenshots/super star ingame.jpg',          title:'Super Star — In Game',       description:'Super Star interface'},
+      {src:'projects/goalden-ball/assets/screenshots/galacticos page.jpg',            title:'Galácticos Tier',            description:'Galácticos overview'},
+      {src:'projects/goalden-ball/assets/screenshots/galacticos money ladder.jpg',    title:'Galácticos — Ladder',        description:'Galácticos rewards'},
+      {src:'projects/goalden-ball/assets/screenshots/galacticos ingame.jpg',          title:'Galácticos — In Game',       description:'Galácticos interface'},
+      {src:'projects/goalden-ball/assets/screenshots/goat page.jpg',                  title:'G.O.A.T. Tier',              description:'G.O.A.T. tier overview'},
+      {src:'projects/goalden-ball/assets/screenshots/goat money ladder.jpg',          title:'G.O.A.T. — Ladder',          description:'G.O.A.T. rewards'},
+      {src:'projects/goalden-ball/assets/screenshots/goat ingame.jpg',                title:'G.O.A.T. — In Game',         description:'G.O.A.T. quiz interface'},
+      {src:'projects/goalden-ball/assets/screenshots/ask icon.jpg',                   title:'Ask an Icon',                description:'Ask an Icon lifeline list'},
+      {src:'projects/goalden-ball/assets/screenshots/ask icon answer.jpg',            title:'Ask an Icon — Answer',       description:'Icon answer overlay (100% confidence)'},
+      {src:'projects/goalden-ball/assets/screenshots/fans vote.jpg',                  title:'Fans Vote',                  description:'Percentage-based audience poll lifeline'},
+      {src:'projects/goalden-ball/assets/screenshots/var 1.jpg',                      title:'VAR Lifeline',               description:'VAR review — checking answer phase'},
+      {src:'projects/goalden-ball/assets/screenshots/var 2.jpg',                      title:'VAR Decision',               description:'VAR final decision overlay'},
+      {src:'projects/goalden-ball/assets/screenshots/daily rewards.jpg',              title:'Daily Rewards',              description:'28-day login calendar with progressive rewards'},
+      {src:'projects/goalden-ball/assets/video/Gameplay.mp4',                   title:'Gameplay Video',             description:'Full gameplay walkthrough'}
     ],
-    muslimquest:[{"src": "assets/mqos/01-system-briefing.webp", "title": "System briefing", "description": "Current prayer window, daily quests and Quran continuation — in development"}, {"src": "assets/mqos/02-module-launcher.webp", "title": "Module launcher", "description": "The current Muslim Quest OS module launcher — in development"}, {"src": "assets/mqos/03-prayer.webp", "title": "Prayer", "description": "Prayer module in its clean default state — in development"}, {"src": "assets/mqos/04-quran-library.webp", "title": "Quran library", "description": "Quran library and reading progress — in development"}, {"src": "assets/mqos/05-dhikr.webp", "title": "Dhikr", "description": "Contextual dhikr dashboard — in development"}, {"src": "assets/mqos/06-dua-library.webp", "title": "Dua library", "description": "Dua library in its clean default state — in development"}],
-    confirmal:[{src:'assets/confirmal-preview.webp',title:'Confirmal',description:'Public demo of the order-to-settlement workflow'}],
-    istighfar:[{src:'assets/istighfar-counter.webp',title:'Istighfar Counter',description:'Ivory and Gold theme — all features free, offline and ad-free'}]
+    muslimquest:[{"src": "projects/muslim-quest-os/assets/screenshots/01-system-briefing.webp", "title": "System briefing", "description": "Current prayer window, daily quests and Quran continuation — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/02-module-launcher.webp", "title": "Module launcher", "description": "The current Muslim Quest OS module launcher — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/03-prayer.webp", "title": "Prayer", "description": "Prayer module in its clean default state — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/04-quran-library.webp", "title": "Quran library", "description": "Quran library and reading progress — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/05-dhikr.webp", "title": "Dhikr", "description": "Contextual dhikr dashboard — in development"}, {"src": "projects/muslim-quest-os/assets/screenshots/06-dua-library.webp", "title": "Dua library", "description": "Dua library in its clean default state — in development"}],
+    confirmal:[{src:'projects/confirmal/assets/preview.webp',title:'Confirmal',description:'Public demo of the order-to-settlement workflow'}],
+    istighfar:[{src:'projects/istighfar-counter/assets/preview.webp',title:'Istighfar Counter',description:'Ivory and Gold theme — all features free, offline and ad-free'}]
   };
 }
 

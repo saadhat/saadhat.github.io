@@ -5,7 +5,7 @@ const caption = document.querySelector('#gallery-caption');
 let current = 0;
 function showShot(offset = 0) {
   current = (current + offset + shots.length) % shots.length;
-  image.src = 'photos/' + encodeURIComponent(shots[current]);
+  image.src = 'projects/goalden-ball/assets/screenshots/' + encodeURIComponent(shots[current]);
   image.alt = 'Goalden Ball: ' + shots[current].replace(/\.jpg$/i, '').replaceAll('_', ' ');
   caption.textContent = `${current + 1} / ${shots.length} — ${image.alt}`;
 }
